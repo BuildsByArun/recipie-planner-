@@ -1,11 +1,3 @@
-/**
- * Interactive Recipe Discovery & Meal Planner Website Script
- * Handles: Navbar, Carousel, Recipe CRUD, Modal, Planner (drag/drop), Shopping List, Nutrition Chart
- * All pages in one script (loads relevant features per page).
- */
-
-/* ---------- Mock Data and Local Storage ---------- */
-
 const RECIPE_KEY = 'mealmagic_recipes';
 const PLANNER_KEY = 'mealmagic_planner';
 
@@ -336,7 +328,6 @@ if (document.getElementById('recipes-grid')) {
     let name = this['recipe-name'].value.trim();
     let category = this['recipe-category'].value;
     let calories = parseInt(this['recipe-calories'].value);
-    let img = this['recipe-img'].value.trim() || "https://unsplash.it/320/220?random";
     let ingredients = this['recipe-ingredients'].value.split(',').map(x=>x.trim()).filter(x=>x);
     let instructions = this['recipe-instructions'].value.trim();
 
@@ -680,4 +671,5 @@ if (document.getElementById('logout-btn')) {
     updateLogoutBtn();
     window.location.href = "signin.html";
   };
+
 }
