@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Recipe Discovery | MealMagic</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-brand"><i class="fas fa-utensils"></i> MealMagic</div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+      <button id="logout-btn" class="btn btn-orange" style="margin-left:1rem;">Logout</button>
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html" class="active">Recipes</a></li>
+      <li><a href="planner.html">Meal Planner</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+  <main class="main recipes-main">
+    <section class="recipes-header">
+      <h1><i class="fas fa-search"></i> Discover Recipes</h1>
+      <div class="recipes-controls">
+        <input type="text" id="recipe-search" placeholder="Search by name or ingredient..." aria-label="Search recipes"/>
+        <div class="category-filters">
+          <button class="cat-btn" data-cat="All">All</button>
+          <button class="cat-btn" data-cat="Vegan">Vegan</button>
+          <button class="cat-btn" data-cat="Quick">Quick</button>
+          <button class="cat-btn" data-cat="Dessert">Dessert</button>
+        </div>
+      </div>
+      <button class="btn btn-orange" id="add-recipe-open"><i class="fas fa-plus"></i> Add Recipe</button>
+    </section>
+    <section class="recipes-grid" id="recipes-grid" aria-label="Recipe cards grid">
+      <!-- Recipe cards injected by JS -->
+    </section>
+    <!-- Recipe Modal (details, edit, delete) -->
+    <div class="modal" id="recipe-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-content">
+        <!-- Modal content injected by JS -->
+      </div>
+    </div>
+    <!-- Add/Edit Recipe Modal -->
+    <div class="modal" id="add-edit-modal" role="dialog" aria-modal="true" aria-labelledby="add-edit-title">
+      <div class="modal-content">
+        <span class="close-modal" id="add-edit-close">&times;</span>
+        <h2 id="add-edit-title"></h2>
+        <form id="add-edit-form" autocomplete="off">
+          <div class="form-group">
+            <label for="recipe-name">Name*</label>
+            <input type="text" id="recipe-name" name="name" required maxlength="32" />
+          </div>
+          <div class="form-group">
+            <label for="recipe-category">Category*</label>
+            <select id="recipe-category" name="category" required>
+              <option value="">Select</option>
+              <option value="Vegan">Vegan</option>
+              <option value="Quick">Quick</option>
+              <option value="Dessert">Dessert</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="recipe-calories">Calories*</label>
+            <input type="number" id="recipe-calories" name="calories" required min="10" max="2000" />
+          </div>
+          <div class="form-group">
+            <label for="recipe-img">Image URL</label>
+            <input type="text" id="recipe-img" name="img" placeholder="Image URL (optional)" />
+          </div>
+          <div class="form-group">
+            <label for="recipe-ingredients">Ingredients* (comma-separated)</label>
+            <textarea id="recipe-ingredients" name="ingredients" required maxlength="300"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="recipe-instructions">Instructions*</label>
+            <textarea id="recipe-instructions" name="instructions" required maxlength="700"></textarea>
+          </div>
+          <button type="submit" class="btn btn-green">Save Recipe</button>
+        </form>
+      </div>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

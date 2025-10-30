@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Recipe Discovery & Meal Planner | Home</title>
+  <!-- Font Awesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-brand"><i class="fas fa-utensils"></i> MealMagic</div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+    <button id="logout-btn" class="btn btn-orange" style="margin-left:1rem;">Logout</button>
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html" class="active">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="planner.html">Meal Planner</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+    </ul>
+  </nav>
+  <!-- MAIN LANDING -->
+  <main class="main home-main">
+    <section class="hero-section">
+      <h1>Discover, Plan, and Cook Delicious Meals!</h1>
+      <p class="desc">Explore vibrant recipes, organize your weekly meals, and get your shopping list ready. <br />A colorful, interactive food journey awaits!</p>
+      <a href="recipes.html" class="btn btn-accent">Start Exploring Recipes <i class="fas fa-arrow-right"></i></a>
+    </section>
+    <section class="carousel-section">
+      <h2 class="carousel-title"><i class="fas fa-star"></i> Featured Recipes</h2>
+      <div class="carousel-wrapper" id="carousel-wrapper" aria-label="Featured recipes carousel">
+        <!-- Carousel slides injected by JS -->
+      </div>
+      <div class="carousel-controls">
+        <button class="carousel-btn" id="carousel-prev" aria-label="Previous Slide"><i class="fas fa-chevron-left"></i></button>
+        <button class="carousel-btn" id="carousel-next" aria-label="Next Slide"><i class="fas fa-chevron-right"></i></button>
+      </div>
+    </section>
+    <section class="search-teaser">
+      <h2>Find Your Perfect Recipe</h2>
+      <p>Quick search, filter by category, and discover something new every day.</p>
+      <a href="recipes.html" class="btn btn-green">Go to Recipe Discovery <i class="fas fa-search"></i></a>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

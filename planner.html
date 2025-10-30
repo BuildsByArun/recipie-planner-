@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Meal Planner | MealMagic</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-brand"><i class="fas fa-utensils"></i> MealMagic</div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+      <button id="logout-btn" class="btn btn-orange" style="margin-left:1rem;">Logout</button>
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="planner.html" class="active">Meal Planner</a></li>
+      <li><a href="dashboard.html">Dashboard</a></li>
+      
+    </ul>
+  </nav>
+  <main class="main planner-main">
+    <section class="planner-header">
+      <h1><i class="fas fa-calendar-alt"></i> Weekly Meal Planner</h1>
+      <p>Drag and drop recipes to plan your meals. Check off cooked meals!</p>
+      <button class="btn btn-accent" id="save-planner"><i class="fas fa-save"></i> Save Plan</button>
+    </section>
+    <section class="planner-body">
+      <aside class="planner-sidebar" aria-label="Recipe list for planning">
+        <h2><i class="fas fa-list"></i> Recipes</h2>
+        <div id="planner-recipe-list">
+          <!-- Recipe sidebar list injected by JS -->
+        </div>
+      </aside>
+      <div class="planner-calendar" id="planner-calendar" aria-label="Weekly calendar grid">
+        <!-- Calendar grid injected by JS -->
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>

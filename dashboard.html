@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+  <title>Shopping List & Nutrition Dashboard | MealMagic</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Chart.js CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="nav-brand"><i class="fas fa-utensils"></i> MealMagic</div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="nav-links">
+    <button id="logout-btn" class="btn btn-orange" style="margin-left:1rem;">Logout</button>
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="recipes.html">Recipes</a></li>
+      <li><a href="planner.html">Meal Planner</a></li>
+      <li><a href="dashboard.html" class="active">Dashboard</a></li>
+    </ul>
+  </nav>
+  <main class="main dashboard-main">
+    <section class="dashboard-header">
+      <h1><i class="fas fa-shopping-basket"></i> Shopping List & Nutrition</h1>
+      <button class="btn btn-orange" id="generate-shopping-list"><i class="fas fa-sync"></i> Generate from Planner</button>
+    </section>
+    <section class="dashboard-body">
+      <div class="shopping-list">
+        <h2><i class="fas fa-list-check"></i> Shopping List</h2>
+        <div id="shopping-list-items">
+          <!-- Shopping list injected by JS -->
+        </div>
+      </div>
+      <div class="nutritional-summary">
+        <h2><i class="fas fa-chart-pie"></i> Nutrition Summary</h2>
+        <div class="nutrition-info" id="nutrition-info">
+          <!-- Nutrition summary injected by JS -->
+        </div>
+        <div class="chart-container">
+          <canvas id="nutrition-pie-chart"></canvas>
+        </div>
+      </div>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
